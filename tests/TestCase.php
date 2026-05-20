@@ -10,7 +10,7 @@ class TestCase extends BaseTestCase
 {
     protected function faker(): Generator
     {
-        $faker = new Generator();
+        $faker = new Generator;
 
         FakerProviders::register($faker);
 

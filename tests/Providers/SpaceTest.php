@@ -27,7 +27,6 @@ it('can generate a random dwarf planet 🪐', function () {
     expect(in_array($dwarfPlanet, $dwarfPlanets))->toBeTrue();
 });
 
-
 it('can generate a random moon 🌙', function () {
     $provider = new ReflectionClass(Space::class);
     /** @var string[] */
