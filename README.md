@@ -36,7 +36,7 @@ use Illuminate\Foundation\Application;
 $locale = $this->app->get('config')->get('app.faker_locale', 'en_US');
 $abstract = Generator::class.':'.$locale;
 
-$this->app->resolving(Generator::class, function (Generator $faker, Application $app) {
+$this->app->resolving($abstract, function (Generator $faker, Application $app) {
     FakerProviders::register($faker);
 
     return $faker;
