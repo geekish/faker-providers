@@ -33,7 +33,7 @@ use Faker\Generator;
 use Geekish\FakerProviders\FakerProviders;
 use Illuminate\Foundation\Application;
 
-$locale = $this->app('config')->get('app.faker_locale', 'en_US');
+$locale = $this->app->get('config')->get('app.faker_locale', 'en_US');
 $abstract = Generator::class.':'.$locale;
 
 $this->app->resolving(Generator::class, function (Generator $faker, Application $app) {
