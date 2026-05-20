@@ -31,9 +31,10 @@ In Laravel, adding providers to the Faker instance accessible via `fake()` can b
 ```php
 use Faker\Generator;
 use Geekish\FakerProviders\FakerProviders;
+use Illuminate\Foundation\Application;
 
-$locale = $app('config')->get('app.faker_locale', 'en_US');
-$abstract = \Faker\Generator::class.':'.$locale;
+$locale = $this->app('config')->get('app.faker_locale', 'en_US');
+$abstract = Generator::class.':'.$locale;
 
 $this->app->resolving(Generator::class, function (Generator $faker, Application $app) {
     FakerProviders::register($faker);
